@@ -80,12 +80,15 @@ $("#download").on("click",function(){
 
 
 //canvaでマウス操作があった時のイベント
-$("#canvas001").on("touchstart",function(){ //マウスを押下した時
+$("#canvas001").on("touchstart",function(e){ //マウスを押下した時
+    e.preventDefault();
     clickFlag = 1;
-  }).on("touchend",function(){ //マウスを離した時
-      clickFlag = 0;
+  }).on("touchend",function(e){ //マウスを離した時
+    e.preventDefault();
+    clickFlag = 0;
   }).on("touchmove",function(e){ //マウスを動かした時
-        if(!clickFlag) return false;
+    e.preventDefault();
+    if(!clickFlag) return false;
         draw(e.offsetX,e.offsetY);
   });    
 
