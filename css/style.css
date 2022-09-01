@@ -1,3 +1,7 @@
+html,body{
+overflow: hidden;
+}
+
 body{
     background-color: #fce0fc;
     color:#f2437d;
