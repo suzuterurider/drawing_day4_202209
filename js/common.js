@@ -89,7 +89,7 @@ $("#canvas001").on("touchstart",function(e){ //マウスを押下した時
   }).on("touchmove",function(e){ //マウスを動かした時
     e.preventDefault();
     if(!clickFlag) return false;
-        draw(e.offsetX,e.offsetY);
+        draw(changedTouches[0].pageX,e.changedTouches[0].pageY);
   });    
 
 
